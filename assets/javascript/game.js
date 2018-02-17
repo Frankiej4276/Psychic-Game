@@ -51,8 +51,8 @@ document.onkeydown = function(){
     guessesLeft--;
 
     // turns keypushes into lower case
-    var playerGuess = String.fromCharCode(event.keycode).toLocaleLowerCase();
-
+    var playerGuess = String.fromCharCode(event.which)
+    console.log(String.fromCharCode(event.which));
     guessedLetters.push (playerGuess);
 
     updateguessesLeft();
@@ -67,12 +67,12 @@ document.onkeydown = function(){
         resetGame();
     }
 
-    else (guessesLeft === 0){
+    else if (guessesLeft === 0){
 
         losses++;
 
         alert("Better luck next time!");
 
         resetGame();
-    }
-}
+    };
+};
